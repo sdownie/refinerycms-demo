@@ -9,8 +9,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-#Devise
 gem 'devise'
+gem 'haml-rails'
 
 #Refinery
 gem 'refinerycms-core',       :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
