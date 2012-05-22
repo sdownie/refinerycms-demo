@@ -12,12 +12,12 @@ end
 gem 'devise'
 gem 'haml-rails'
 
-#Refinery
-gem 'refinerycms-core',       :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
-gem 'refinerycms-dashboard',  :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
-gem 'refinerycms-images',     :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
-gem 'refinerycms-pages',      :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
-gem 'refinerycms-resources',  :git => 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable'
+git 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable' do
+  gem 'refinerycms-dashboard'
+  gem 'refinerycms-images'
+  gem 'refinerycms-pages'
+  gem 'refinerycms-resources'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -177,7 +177,6 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   rails (= 3.2.3)
-  refinerycms-core!
   refinerycms-dashboard!
   refinerycms-images!
   refinerycms-pages!
