@@ -1,4 +1,5 @@
 ::Refinery::ApplicationController.module_eval do
+  require 'refinery/base_presenter'
 
   def self.included(base) # Extend controller
     base.helper_method :home_page?, :local_request?, :just_installed?,
@@ -99,14 +100,6 @@
     # use a different model for the meta information.
     def present(model)
       @meta = presenter_for(model).new(model)
-    end
-
-    def presenter_for(model, default=BasePresenter)
-      return default if model.nil?
-
-      "#{model.class.name}Presenter".constantize
-    rescue NameError
-      default
     end
 
 end
