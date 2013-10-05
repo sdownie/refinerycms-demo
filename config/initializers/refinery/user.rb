@@ -23,17 +23,6 @@
     end
   end
 
-  def store_location
-    session[:return_to] = request.fullpath.sub("//", "/")
-  end
-
-  # Redirect to the URI stored by the most recent store_location call or
-  # to the passed default.
-  def redirect_back_or_default(default)
-    redirect_to(session[:return_to] || default)
-    session[:return_to] = nil
-  end
-
   # This just defines the devise method for after sign in to support
   # extension namespace isolation...
   def after_sign_in_path_for(resource_or_scope)
@@ -44,10 +33,6 @@
 
   def after_sign_out_path_for(resource_or_scope)
     refinery.root_path
-  end
-
-  def refinery_user?
-    refinery_user_signed_in? && current_refinery_user.has_role?(:refinery)
   end
 
   def refinery_user_signed_in?
@@ -95,8 +80,21 @@
       (/^(user|session)(|s)/ === controller_name && !admin?) || just_installed?
     end
 
-  protected :store_location, :redirect_back_or_default, :refinery_user?
   protected
+    def refinery_user?
+      refinery_user_signed_in? && current_refinery_user.has_role?(:refinery)
+    end
+
+   # Redirect to the URI stored by the most recent store_location call or
+    # to the passed default.
+    def redirect_back_or_default(default)
+      redirect_to(session[:return_to] || default)
+      session[:return_to] = nil
+    end
+
+    def store_location
+      session[:return_to] = request.fullpath.sub("//", "/")
+    end
 
     # use a different model for the meta information.
     def present(model)
