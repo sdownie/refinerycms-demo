@@ -12,6 +12,7 @@ end
 gem 'devise'
 gem 'fog'
 gem 'haml-rails'
+gem 'awesome_print'
 
 git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
   gem 'refinerycms-dashboard'
