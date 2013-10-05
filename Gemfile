@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem "rails", "~> 3.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,7 +12,7 @@ end
 gem 'devise'
 gem 'haml-rails'
 
-git 'git://github.com/resolve/refinerycms.git', :branch => '2-0-stable' do
+git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
   gem 'refinerycms-dashboard'
   gem 'refinerycms-images'
   gem 'refinerycms-pages'
@@ -30,8 +30,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
