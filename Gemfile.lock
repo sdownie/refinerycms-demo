@@ -169,8 +169,8 @@ GEM
     routing-filter (0.3.1)
       actionpack
     ruby-hmac (0.4.0)
-    sass (3.1.18)
-    sass-rails (3.2.5)
+    sass (3.2.12)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
