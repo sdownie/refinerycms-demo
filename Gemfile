@@ -10,6 +10,7 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'fog'
 gem 'haml-rails'
 
 git 'git://github.com/refinery/refinerycms.git', :branch => '2-1-stable' do
